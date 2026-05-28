@@ -110,7 +110,7 @@ def fair_unlearning(model, unlearning_loader, remaining_loader, loss_fn, config,
         'batch_count': 0
     }
     
-    for iteration in range(config.unlearning_iterations):
+    for epoch in range(config.unlearning_epochs):
         batch_count = 0
         
         for batch_idx, (X_remain, y_remain, protected_attr) in enumerate(remaining_loader):

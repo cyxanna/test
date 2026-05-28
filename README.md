@@ -167,7 +167,7 @@ unlearning_method: FU            # Fair Unlearning method
 
 # FU loss weights
 unlearning_lr: 0.0001            # Unlearning learning rate
-unlearning_iterations: 5         # Gradient update iterations per step
+unlearning_epochs: 5             # Gradient update epochs per step
 weight_cls: 0.1                  # Forget gradient weight (unlearning strength)
 weight_fair: 0.5                 # Fairness gradient weight
 weight_remain: 0.3               # Remaining data utility weight

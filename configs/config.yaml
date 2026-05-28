@@ -25,7 +25,7 @@ unlearning_method: UNLEARNING_METHOD # "FU"
 
 # FU hyperparams
 unlearning_lr: UNLEARNING_LR
-unlearning_iterations: UNLEARNING_ITERATIONS
+unlearning_epochs: UNLEARNING_EPOCHS
 weight_cls: WEIGHT_UNLEARNING
 weight_fair: WEIGHT_FAIRNESS
 weight_remain: WEIGHT_REMAINING

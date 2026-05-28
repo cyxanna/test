@@ -175,7 +175,7 @@ def run_single(config, step: int, parent_dir: str, train_dataset, all_val_datase
     base_dir = os.path.join(config.exp_root.strip(), f"{config.dataset_name}_{config.model_name}_{config.protected_attr}_{config.task_type}")
     step_dir = os.path.join(base_dir, f"step_{step}")
     os.makedirs(step_dir, exist_ok=True)
-    run_dir = os.path.join(step_dir, f"seed_{unlearning_seed}")
+    run_dir = os.path.join(step_dir, f"seed_{config.unlearning_seed}")
 
     if os.path.exists(run_dir):
         print(f"[warn] {run_dir} already exists. Skip this run to avoid overwrite.")
@@ -319,10 +319,7 @@ def main(config, *, config_path: str):
                 _, this_val_dataset, this_test_dataset, this_test_meta_info = get_dataset(
                     dataset_name=this_ds,
                     data_root=data_path_extra,
-                    device=config.device,
-                    normalise_data=False,
-                    intersectional=True if config.protected_attr == "ethnicity_age" else False,
-                    cal_dist=False
+                    device=config.device
                 )
                 this_test_meta_info.pop('scaler')
                 this_data = meta_info['scaler'].transform(this_test_dataset['test_input'].cpu().detach().numpy())
